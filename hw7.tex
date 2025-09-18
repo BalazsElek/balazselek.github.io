@@ -1,0 +1,101 @@
+\documentclass[12pt]{article}
+\input{c:/Dropbox/TeX/mypreamble.tex}
+% \input{/media/bazse/storage/Dropbox/TeX/mypreamble.tex}
+\usepackage{tikz}
+\tikzset{>=latex}
+\usetikzlibrary{calc}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{patterns,decorations.pathreplacing}
+\usetikzlibrary{spy}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.12}
+\usepgfplotslibrary{colormaps}
+\usepgfplotslibrary{patchplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage{array} % for \newcolumntype macro
+\newcolumntype{C}{>{{}}c<{{}}} % for columns with binary operators
+\newcommand\vv{\multicolumn{1}{c}{\vdots}}
+
+\newcommand{\rubric}[1]{{\color{blue}{#1}}}
+
+\begin{document}
+\title{MATH223 Homework 7\\ (due Friday, Nov/29, 11:59pm)}
+\author{}
+\date{}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{enumerate}
+\item (This is Exercise 11 in Axler 5B) Suppose $V$ is a two-dimensional vector space, $T\in \mathcal{L}(V)$, and the matrix of $T$ with respect to some basis of $V$ is $
+  \begin{pmatrix}
+    a & b \\
+    c & d
+  \end{pmatrix}$.
+  \begin{enumerate}[(a)]    
+  \item (1 mark) Show that $T^2-(a+d)T+(ad-bc)I=0$.
+  \item (1 mark) Show that the minimal polynomial of $T$ equals
+    \[
+      \begin{cases}
+        z-a &\text{ if }b=c=0\text{ and }a=d, \\
+        z^2-(a+d)z+(ad-bc) &\text{ otherwise}.
+      \end{cases}
+    \]
+  \end{enumerate}
+\item (2 marks, this is Exercise 16 in Axler 5B) Suppose $a_0,\ldots ,a_{n-1}\in \bF$. Let $T$ be the operator on $\bF^n$ whose matrix (with respect to the standard basis) is
+  \[
+    \begin{pmatrix}
+      0 & & & & & -a_0 \\
+      1 & 0 & & & & -a_1 \\
+        & 1 & \ddots & & & -a_2 \\
+        & & \ddots & & & \vdots \\
+        & & & & 0 & -a_{n-2} \\
+        & & & & 1 & -a_{n-1}
+    \end{pmatrix}.
+  \]
+  Here all the entries of the matrix are $0$ except for all $1$'s on the line under the diagonal and the entries in the last column (some of which might also be $0$). Show that the minimal polynomial of $T$ is the polynomial
+  \[
+    a_0+a_1z+\ldots +a_{n-1}z^{n-1}+z^n.
+  \]
+\item (2 marks, this is Exercise 22 in Axler 5B) Suppose $V$ is finite-dimensional and $T\in \mathcal{L}(V)$. Prove that $T$ is invertible if and only if $I\in\operatorname{span}(T,T^2,\ldots ,T^{\dim V})$.
+\item A \textbf{Pingala sequence} is a sequence $P_0,P_1,P_2,\ldots $ of real numbers satisfying
+  \[
+    P_n=P_{n-2}+P_{n-1}
+  \]
+  for $n\geq 2$.\footnote{You might notice that if $P_0=0,P_1=1$, then you get the famous Fibonacci sequence $(F_n)$. The Indian mathematician Pingala described this sequence about a \href{https://en.wikipedia.org/wiki/Fibonacci_sequence}{thousand years} before Fibonacci.}
+  \begin{enumerate}[(a)]
+  \item (1 mark) Show that the set of Pingala sequences is a subspace of $\bR^\bN$, the vector space of sequences of real numbers.
+  \item (2 marks) Find a basis for the subspace of Pingala sequences and hence determine its dimension. Justify your answer.
+  \item Define $T\in\mathcal{L}(\bR^2)$ by $T(x,y)=(y,x+y)$.
+    \begin{enumerate}[(i)]
+    \item (1 mark) Show that if $P_0,P_1,\ldots $ is a Pingala sequence, then $T^n(P_0,P_1)=(P_{n},P_{n+1})$ for $n\geq 0$.
+    \item (1 mark) Find the eigenvalues of $T$.
+    \item (2 mark) Find a basis of $\bR^2$ consisting of eigenvectors of $T$.
+    \item (2 mark) Use the solution to the previous part to compute $T^n(0,1)$. Conclude that
+      \[
+        P_n=F_n=\frac{1}{\sqrt{5}}\left[ \left(\frac{1+\sqrt{5}}{2}\right)^n - \left(\frac{1-\sqrt{5}}{2}\right)^n\right]
+      \]
+      for each nonnegative integer $n$ (Not part of the question, just something to ponder: \textit{isn't this a funny way to write a number that is clearly an integer?}). 
+    \item (1 mark) Use the previous part to conclude that if $n$ is a nonnegative integer, then the Fibonacci number $F_n$ is the integer that is closest to
+      \[
+        \frac{1}{\sqrt{5}}\left( \frac{1+\sqrt{5}}{2} \right)^n.
+      \]
+    \end{enumerate}
+  \end{enumerate}
+\item (This is Exercise 32 in Axler 3F) The \textbf{double dual space} of $V$, denoted $V^{\prime\prime}$, is defined to be the dual space of $V^\prime$, in other words, $V^{\prime\prime}=(V^{\prime})^{\prime}$. Define $\wedge:V\to V^{\prime\prime}$ by
+  \[
+    (\wedge(\vec v))(\varphi)=\varphi(\vec v)
+  \]
+  for each $v\in V$ and $\varphi\in V^\prime$.
+  \begin{enumerate}[(a)]
+  \item (1 mark) Show that $\wedge$ is a linear map from $V$ to $V^{\prime\prime}$.
+  \item (2 marks) Show that if $T\in \mathcal{L}(V)$, then $T^{\prime\prime}\circ\wedge=\wedge\circ T$, where $T^{\prime\prime}=(T^\prime)^\prime$.
+  \item (1 mark) Show that if $V$ is finite-dimensional, then $\wedge$ is an isomorphism from $V$ onto $V^{\prime\prime}$.
+  \end{enumerate}
+\end{enumerate}
+
+
+\bibliography{c:/Dropbox/TeX/mybibliography}{}
+% \bibliography{/media/bazse/storage/Dropbox/TeX/mybibliography}{}
+\bibliographystyle{alpha}
+
+\end{document}

@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+\input{c:/Dropbox/TeX/mypreamble.tex}
+%\input{/media/bazse/storage/Dropbox/TeX/mypreamble.tex}
+\usepackage{tikz}
+\tikzset{>=latex}
+\usetikzlibrary{calc}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{patterns,decorations.pathreplacing}
+\usetikzlibrary{spy}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.12}
+\usepgfplotslibrary{colormaps}
+\usepgfplotslibrary{patchplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage{array} % for \newcolumntype macro
+\newcolumntype{C}{>{{}}c<{{}}} % for columns with binary operators
+\newcommand\vv{\multicolumn{1}{c}{\vdots}}
+
+\newcommand{\rubric}[1]{{\color{blue}{#1}}}
+
+\begin{document}
+\title{MATH223 Homework 5\\ (due Sunday, Oct/27, 11:59pm)}
+\author{}
+\date{}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{enumerate}
+\item (3 marks) Recall the three types of row operations that we have:
+  \begin{itemize}
+  \item Multiplying row $i$ by a nonzero scalar $\lambda$.
+  \item Adding $\lambda$ times row $j$ to row $i$ (with $i\neq j$).
+  \item Switching rows $i$ and $j$.
+  \end{itemize}
+  Suppose we are performing row operations on an $m\times n$ matrix $A$. For each of the row operations above, find an $m\times m$ matrix $E$ such that the matrix product $EA$ is the matrix $A$ with the corresponding row operation performed. Justify your answer.
+\item (2 marks) Instead of row operations, we may consider the following column operations:
+  \begin{itemize}
+  \item Multiplying column $i$ by a nonzero scalar $\lambda$.
+  \item Adding $\lambda$ times column $j$ to column $i$ (with $i\neq j$).
+  \item Switching columns $i$ and $j$.
+  \end{itemize}
+  Suppose we are performing column operations on an $m\times n$ matrix $A$. For each of the column operations above, find an $n\times n$ matrix $E$ such that the matrix product $AE$ is the matrix $A$ with the corresponding column operation performed. Justify your answer.
+\item (2 marks, this is Exercise 2 in Axler 3D) Suppose $T\in\mathcal{L}(U,V)$ and $S\in\mathcal{L}(V,W)$ are both invertible linear maps. Prove that $ST\in \mathcal{L}(U,W)$ is invertible and that $(ST)^{-1}=T^{-1}S^{-1}$.
+\item In this exercise we will connect invertibility to the RREF of a matrix. A square matrix $A$ is said to be invertible if there exists another matrix $B$ of the same size such that $AB=BA=I_n$ is the $n\times n$ identity matrix. If $A=\mathcal{M}(T)$ is the matrix of a linear transformation (with respect to some bases) then $A$ is invertible (as a matrix) if and only if $T$ is invertible (as a linear transformation).
+  \begin{enumerate}
+  \item (2 marks) Let $A=\mathcal{M}(T)$ be matrix of size $n\times n$. Prove that $A$ is invertible if and only if the RREF of $A$ is the $n\times n$ identity matrix. (\textbf{Hint:} Q1 on Homework 3 may be useful)
+  \item (4 marks) Suppose $A$ is invertible. Consider the augmented matrix
+    \[
+      \left( A\; \middle| \; I_n \right)
+    \]
+    (where $I_n$ denotes the $n\times n$ identity matrix) of size $n\times 2n$. Show that the RREF of this matrix is
+    \[
+      \left( I_n\; \middle| \; A^{-1} \right).\footnote{This gives us a practical way to compute the inverse of a matrix.}
+    \]
+    (\textbf{Hint: } You might want to use Q1, Q3, and Q4 (a) for this)
+  \end{enumerate}
+\item (3 marks, this is Exercise 9 in Axler 3D) Suppose $V$ is finite-dimensional and $T:V\to W$ is a surjective linear map of $V$ onto $W$. Prove that there is a subspace $U$ of $V$ such that $\restr{T}{U}$ is an isomorphism of $U$ onto $W$. \textit{(Here $\restr{T}{U}$ means the function $T$ restricted to $U$. Thus $\restr{T}{U}$ is the function whose domain is $U$ with $\restr{T}{U}$ defined by $\restr{T}{U}(\vec u)=T(\vec u)$ for every $\vec u\in U$.} (\textbf{Hint:} Q5 on Homework 4 may be useful)
+\item Let $V$ be finite-dimensional and consider the vector space $\mathcal{L}(V)$ of linear maps from $V$ to itself.
+  \begin{enumerate}
+  \item (2 marks) Is the set of invertible linear transformations a subspace of $\mathcal{L}(V)$? Justify your answer.
+  \item (2 marks) Is the set of non-invertible linear transformations a subspace of $\mathcal{L}(V)$? Justify your answer.
+  \end{enumerate}
+  (\textbf{Hint:} be careful with this one, your answer should depend on $\dim V$!)
+\end{enumerate}
+
+
+\bibliography{c:/Dropbox/TeX/mybibliography}{}
+% \bibliography{/media/bazse/storage/Dropbox/TeX/mybibliography}{}
+\bibliographystyle{alpha}
+
+\end{document}

@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>
+Balazs Elek
+</title>
+<style> p.ex{width:800px} </style>
+</head>
+<body>
+<p class="ex">
+Slides for my <a href="minusculemultiples_slides.pdf">talk on Heaps, Crystals and Preprojective Algebra Modules</a> at the Geometry, Physics, and Representation Theory Seminar at Northeastern Univeristy</p>
+<p class="ex">
+Slides for a <a href="borel_fixed_point_theorem.pdf">super short talk</a> on the Borel fixed point theorem and some applications at <a href="http://www.adimom.xyz/conference.html">ADIMOM 2020</a> </p>
+<p class="ex">
+Slides for my <a href="pizzas_slides.pdf">talk</a> at the CMS winter meeting, in the <a href="https://cms.math.ca/Events/winter19/schedule_session#cag2">Convexity in Algebraic Geometry and Symplectic Geometry</a> session.
+<p class="ex">
+Slides for my <a href="minusculemultiples_slides.pdf">talk</a> at the CMS winter meeting, in the <a href="https://cms.math.ca/Events/winter19/schedule_session#cag">Combinatorial Algebraic Geometry</a> session.
+<p class="ex">
+Notes for my <a href="FlagBS.pdf">talk</a> in the <a href="http://www.math.toronto.edu/adranows/ls19.html">GRT learning seminar</a> in Fall 2019 at the University of Toronto.
+</p>
+<p class="ex">
+Slides for my <a href="KRcactusslides.pdf">talk</a> at the Oberseminar Lie Theorie at Ruhr-Universit&auml;t Bochum 2018
+<p class="ex">
+Notes for the Ithaca High School Senior Seminar: <a href="reflection_groups_2016.pdf">Reflection Groups</a> <a href="hun.pdf">(Or, a much shortened version, in Hungarian)</a>
+<p class="ex">
+Slides for my <a href="pizzaslides_uiuc.pdf">talk</a> at the Algebra, Geometry and Combinatorics seminar at UIUC, 2017
+<p class="ex">
+Slides for my <a href="pizzaslides_charmey.pdf">talk</a> at the 6th Swiss-French Workshop in Algebraic Geometry in Charmey, Switzerland, 2017
+<p class="ex">
+Slides for my 2016 Fall Olivetti: <a href="leechlattice.pdf">The Leech lattice</a>
+<p class="ex">
+My poster for <a href="https://sites.google.com/site/algecomday/algecom-13-1">ALGECOM13</a>,the <a href="http://www.fields.utoronto.ca/activities/workshops/introductory-workshop-combinatorial-algebraic-geometry">Introductory Workshop on Combinatorial Algebraic Geometry at Fields</a> and the <a href="https://sites.google.com/site/2017uchicagomathconference/">Interactions between Representation Theory and Algebraic Geometry at UChicago</a>: <a href="pizzaspostermod.pdf">Pizzas and Kazhdan-Lusztig atlases in dimension 2</a>
+<p class="ex">
+Slides for my 2016 Spring Olivetti talk: <a href="pizzaslides_olivetti.pdf">Pizzas</a>
+<p class="ex">
+Notes for my 2015 Fall Olivetti talk: <a href="olivettispringerresolution.pdf">The Springer Resolution</a>
+</p>
+<p class="ex">
+Notes for my 2014 Fall Olivetti talk: <a href="olivetti2014fall_Schubert_calculus.pdf">Schubert Calculus</a>
+</p>
+<p class="ex">
+Notes for the 2014/Sep/23 lecture in MATH7390: <a href="BS_varieties.pdf">Bott-Samelson varieties</a>
+</p>
+<p class="ex">
+Here is my <a href="thesis.pdf">Master's thesis</a>, written at <a href="http://www.math.hku.hk/">The University of Hong Kong</a>, where my advisor was <a href="http://hkumath.hku.hk/~jhlu/">Prof. Jiang-Hua Lu</a>. If you are curious what this Poisson structure looks like for a word of the top element of the Weyl group of E8, <a href="E8example.pdf">here</a> are a couple of Poisson brackets.
+</body>
+</html>

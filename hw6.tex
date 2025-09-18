@@ -1,0 +1,91 @@
+\documentclass[12pt]{article}
+\input{c:/Dropbox/TeX/mypreamble.tex}
+% \input{/media/bazse/storage/Dropbox/TeX/mypreamble.tex}
+\usepackage{tikz}
+\tikzset{>=latex}
+\usetikzlibrary{calc}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{patterns,decorations.pathreplacing}
+\usetikzlibrary{spy}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.12}
+\usepgfplotslibrary{colormaps}
+\usepgfplotslibrary{patchplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage{array} % for \newcolumntype macro
+\newcolumntype{C}{>{{}}c<{{}}} % for columns with binary operators
+\newcommand\vv{\multicolumn{1}{c}{\vdots}}
+
+\newcommand{\rubric}[1]{{\color{blue}{#1}}}
+
+\begin{document}
+\title{MATH223 Homework 6\\ (due Sunday, Nov/3, 11:59pm)}
+\author{}
+\date{}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{enumerate}
+\item \label{qn:injective}(this is Exercise 14 in Axler 4) Suppose $p,q\in\mathcal{P}(\bC)$ are nonconstant polynomials with no zeros in common. Let $m=\deg p$ and $n=\deg q$. Use linear algebra as outlined below in (a)-(c) to prove that there exist $r\in \mathcal{P}_{n-1}(\bC)$ and $s\in\mathcal{P}_{m-1}(\bC)$ such that
+  \[
+    rp+sq=1.
+  \]
+  \begin{enumerate}[(a)]
+  \item (2 marks) Define $T:\mathcal{P}_{n-1}(\bC)\times \mathcal{P}_{m-1}(\bC)\to \mathcal{P}_{m+n-1}(\bC)$ by
+    \[
+      T(r,s)=rp+sq.
+    \]
+    Show that the linear map $T$ is injective.
+  \item (1 mark) Show that the linear map $T$ in (a) is surjective.
+  \item (1 mark) Use (b) to conclude that there exist $r\in\mathcal{P}_{n-1}(\bC)$ and $s\in\mathcal{P}_{m-1}(\bC)$ such that \mbox{$rp+sq=1$}.
+  \end{enumerate}
+\item \label{qn:resultant} As in question \ref{qn:injective}, let $p(x)=a_0+a_1x+\ldots +a_mx^m$ and $q(x)=b_0+b_1x+\ldots +b_nx^n$ be nonconstant polynomials (with $a_m\neq 0$, $b_n\neq 0$), but in this question do not assume that they do not share a root. Let $T:\mathcal{P}_{n-1}(\bC)\times \mathcal{P}_{m-1}(\bC)\to \mathcal{P}_{m+n-1}(\bC)$ be the same linear map
+  \[
+    T(r,s)=rp+sq.    
+  \]
+  \begin{enumerate}[(a)]
+  \item (1 mark) In question \ref{qn:injective} you showed that $T$ is an isomorphism if $p$ and $q$ do not share a root. Show the converse, i.e. prove that if $T$ is an isomorphism then $p$ and $q$ do not share a root.
+  \item (2 marks) Recall that the list
+    \[
+      \left((1,0),(x,0),\ldots ,(x^{n-1},0), (0,1), (0,x), \ldots ,(0,x^{m-1})\right)
+    \]
+    is a basis of $\mathcal{P}_{n-1}(\bC)\times \mathcal{P}_{m-1}(\bC)$ and that
+    \[
+      (1,x,x^2,\ldots ,x^{m+n-1})
+    \]
+    is a basis of $\mathcal{P}_{m+n-1}(\bC)$. Compute the matrix of $T$ with respect to these bases.
+  \item (2 marks) The expression $\det(\mathcal{M}(T))$ is called the \textbf{resultant} of the polynomials $p$ and $q$. If $\det(\mathcal{M}(T))=0$, then what can you say about the roots of $p$ and $q$? Justify your answer.
+  \end{enumerate}
+  \newpage
+\item As in questions \ref{qn:injective} and \ref{qn:resultant}, let $p(x)=a_0+a_1x+\ldots +a_mx^m$ be a degree $m$ polynomial. Let $q(x)=\frac{d}{dx}(p(x))$ be the derivative of $p$. We say that \textbf{$p(x)$ has a double root at $\lambda$} if $p(x)=(x-\lambda)^2s(x)$ for some polynomial $s$ of degree $m-2$.
+  \begin{enumerate}[(a)]
+  \item (1 mark) Prove that $p(x)$ has a double root at $\lambda$ if and only if $p(\lambda)=q(\lambda)=0$ (\textbf{Hint:} This is a Calculus question).
+  \item (3 marks) Let $m=2$ (i.e. $p$ is a quadratic polynomial). Use question \ref{qn:resultant} to find a condition on the coefficients of $p$ that is equivalent to $p$ having a double root (\textbf{Hint:} remember, $a_2\neq 0$). Do you recognize this expression? (\textbf{Hint:} It is generally best to leave the computation of determinants to a computer, especially if the matrix involved is large. There are numerous software that can compute determinants involving formal variables, \href{https://sagecell.sagemath.org/?z=eJyFVMFuozAQvSPxDyOhKlCcKFR7isQnVNr2irKRSUxiBY-JbRry9zs20LLqrjaHaGy9NzPvzZjkJBqJAtxFwEmcjRCW-SDtslKN0S0rkQG3IDHAbr2wTmqMI1W-xBH6vzhKpkQf3Ehet8JCo03AH7VoGnmUAp0FjqdwKfEknDBKInfCxlErrdMNt2VFCdIVPzzJFTzJLGSRvnS13WzUfj9D6xla_x2KHhoAw4qtHqssNKn4VQCHTrcP1EryFozEM9ylu_i27LL_NIAtPwvoqVtj3dg8d3AXcOfowGk6S7yCbhY5LdV6L39-nt-pRPr2xlSO-Q82K81nHXk1sMc-W5rIoenx6E0e6xntvE3BObLRSIqpJAefI46INUHSll2zXRwB_YxwvcG0rdbX3T5vq936OlWxnTjK5vF9OpTT3y2ksHHq0oIYuOpawQDiqAssW85aICFHuBHQCue8oV06ZCU_bHN-KJ6HfLPZUKSeh18qjm5_kGsie19vnlETo_5k1AckBoaWk7p38NA9HDkC9aVhIUL5QdTetpNsGmFIy0IDI5euIohgYUcmJTtIjVD6Y1z-ZE0ba7QKh1qcJaIXMjmCYqBp3zWlQj8Hmrt5kJnJ7ERVsBdW7CG5UPlRfpG_DPnwi15HMkuu1gXbfsGC5nUxgr6mP46l7RXSw6CAl1OVvNoulrygJV8Xe0rWSFrOiTJ3rDityRD4dXn7B1_9jz-u31Gj4xIt1Ae5tl8P6QvHoLfeLn8zbuLnBsfRa-kMR9tpK9IRnlbTunp17NvT9V3lC0j9DRIaz2gA9qLv6SsFHT1kl67oq0LHcsXGIPsN3bWYvg==&lang=sage&interacts=eJyLjgUAARUAuQ==}{sage} is one of them that is relatively easy to use.) 
+  \item (2 marks) Let $m=3$ (i.e. $p$ is a cubic polynomial). Find a condition on the coefficients of $p$ that is equivalent to $p$ having a double root.
+  \end{enumerate}
+\item In this question we'll explore another application of resultants. We want to find solutions of the system
+  \[
+    \setlength{\arraycolsep}{0pt}
+    \begin{array}{c C c C c C c C l}
+      & & y^2& &  & - & (x^3+3x^2+2x+1) & = & 0 \\
+      y^3 & + & y^2(3x+3) & + & y(3x^2+6x+2) & + & (x^3+3x^2+4x+2) & = & 0
+    \end{array}
+  \]
+  of non-linear polynomial equations. That is, we want to find pairs $(x,y)$ of (real) numbers that satisfy both of the above equations.
+  \begin{enumerate}[(a)]
+  \item (3 marks) Define two polynomials
+    \begin{align*}
+      p(x,y)&=y^2-(x^3+3x^2+2x+1) \\
+      q(x,y)&=y^3+y^2(3x+3)+y(3x^2+6x+2) +(x^3+3x^2+4x+2).
+    \end{align*}
+    Think of them as polynomials in the variable $y$ (so, we treat functions of $x$ as coefficients, notice that we already wrote them this way). Use question \ref{qn:resultant} to find a polynomial equation $s(x)$ in just the variable $x$ that is equivalent to $p(x,y)$ and $q(x,y)$ sharing a root.\footnote{This technique is one of the main tools of \href{https://en.wikipedia.org/wiki/Elimination_theory}{elimination theory}. Notice how much harder polynomial elimination is than Gaussian (linear) elimination.}
+  \item (2 marks) Find a root of $s(x)$ and use this to find some solutions to the system\footnote{This polynomial will be high degree so we don't have a formula for its roots. Computers can also help with factorization sometimes, \href{https://sagecell.sagemath.org/?z=eJwrSyzSUK9Q1-TlSktMLskv0jDRqogzUdBVsADSxkDa0BjIMFLQVjDSqgCSxpoAWKMMaA==&lang=sage&interacts=eJyLjgUAARUAuQ==}{here is a sage example}.} (you should be able to find three of them).
+  \end{enumerate}
+\end{enumerate}
+
+
+\bibliography{c:/Dropbox/TeX/mybibliography}{}
+% \bibliography{/media/bazse/storage/Dropbox/TeX/mybibliography}{}
+\bibliographystyle{alpha}
+
+\end{document}

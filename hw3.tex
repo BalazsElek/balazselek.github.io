@@ -1,0 +1,89 @@
+\documentclass[12pt]{article}
+\input{d:/Dropbox/TeX/mypreamble.tex}
+%\input{/media/bazse/storage/Dropbox/TeX/mypreamble.tex}
+
+\usepackage{array} % for \newcolumntype macro
+\newcolumntype{C}{>{{}}c<{{}}} % for columns with binary operators
+\newcommand\vv{\multicolumn{1}{c}{\vdots}}
+
+\begin{document}
+\title{MATH223 Homework 3\\ (due Monday, September 11, 30:59pm)}
+\author{}
+\date{}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{enumerate}
+\item In this question we will try to understand this week's new definitions by putting them into a more concrete context of matrices.
+  \begin{enumerate}
+  \item (2 marks) Show that $\vec v_1, \vec v_2, \ldots , \vec v_m$, with $\vec v_i\in \bF^n$ is linearly independent if and only if the RREF of the matrix whose columns are the vectors
+    \[
+      \left( \vec v_1 , \vec v_2, \ldots , \vec v_m \right)
+    \]
+    has $m$ pivots.
+  \item (2 marks) Show that $\vec v_1, \vec v_2, \ldots , \vec v_m$, with $\vec v_i\in \bF^n$ spans $\bF^n$ if and only if the RREF of the matrix
+    \[
+      \left( \vec v_1 , \vec v_2, \ldots , \vec v_m \right)
+    \]
+    has $n$ pivots.
+  \item (1 mark) Based on the previous parts, when does a list $\vec v_1, \vec v_2, \ldots , \vec v_m$, with $\vec v_i\in \bF^n$ form a basis for $\bF^n$? Give your answer in terms of the RREF of the matrix
+    \[
+      \left( \vec v_1 , \vec v_2, \ldots , \vec v_m \right)
+    \]
+  \end{enumerate}
+\item (2 marks, this is Exercise 13 in Axler 2A) Suppose $\vec v_1,\ldots \vec v_m$ is linearly independent in $V$ and $w\in V$. Show that
+  \[
+    v_1,\ldots ,v_m,w\text{ is linearly independent} \Leftrightarrow w\not\in\Span(v_1,\ldots ,v_m).
+  \]
+\item Consider $\bR$ as a vector space over $\mathbb{Q}$ (the rational numbers). You do not need to verify that it is a vector space.
+  \begin{enumerate}
+  \item (1 mark) Prove that the list $(1,\sqrt{2})$ is linearly independent.
+  \item (1 mark) Prove that the list $(1,\sqrt{2},\sqrt[3]{2})$ is linearly independent.
+  \item (1 mark) Assuming that the list $(1,\sqrt{2},\sqrt[3]{2},\ldots ,\sqrt[n]{2})$ is linearly independent \mbox{(for any $n$)}, prove that $\bR$ is an infinite-dimensional vector space over $\mathbb{Q}$.
+  \end{enumerate}
+\item Recall that a binomial coefficient $\binom{n}{k}$ is defined as
+  \[
+    \binom{n}{k}=\frac{n!}{k!(n-k)!}=\frac{n(n-1)(n-2)\cdots (n-k+1)}{k(k-1)\cdots (2)(1)}.
+  \]
+  Similarly, we define, for a variable $x$ the following \emph{polynomial}:
+  \[
+    \binom{x}{k}=\frac{x(x-1)(x-2)\cdots (x-k+1)}{k!}.
+  \]
+  \begin{enumerate}
+  \item (1 mark) Could we have instead defined this polynomial as
+    \[
+      \binom{x}{k}=\frac{x!}{k!(x-k)!}?
+    \]
+    Explain your answer carefully.
+  \item (2 marks) Prove that the list
+    \[
+      \binom{x}{0}, \binom{x}{1}, \ldots , \binom{x}{m}
+    \]
+    is a basis for $\mathcal{P}_m(\bF)$.\footnote{We will see later that this basis is better for some purposes than $1,x,x^2,\ldots , x^m$. Here is something that you might find nice: what is $\frac{d}{dx}\binom{x}{k}$?}
+  \end{enumerate}
+\item (3 marks this is Exercise 15 in Axler 2C) Suppose $V$ is finite-dimensional and $V_1,V_2,V_3$ are subspaces of $V$ with $\dim V_1+\dim V_2+\dim V_3>2\dim V$. Prove that $V_1\cap V_2 \cap V_3\neq \{0\}$.
+\item In this question we address a very commonly held false belief about dimensions.
+  \begin{enumerate}
+  \item \label{thm:inclexcl} (2 marks) Let $S_1, S_2, S_3$ be finite sets. Prove that
+  \[
+    |S_1\cup S_2\cup S_3|=|S_1|+|S_2|+|S_3|-|S_1\cap S_2|-|S_1\cap S_3|-|S_2\cap S_3|+|S_1\cap S_2\cap S_3|,
+  \]
+  where $|S|$ denotes the cardinality (number of elements) of a set. (\textbf{Hint:} this part has nothing to do with linear algebra).
+\item (2 marks) this is Exercise 19 in Axler 2C) Let $U_1, U_2, U_3$ be subspaces. We have seen (or will see) in class that
+  \[
+    \dim(U_1+U_2)=\dim(U_1)+\dim(U_2)-\dim(U_1\cap U_2).
+  \]
+  You might guess (following part \ref{thm:inclexcl}) that this generalizes to
+  \begin{align*}
+    \dim(U_1+U_2+U_3)&=\dim(U_1)+\dim(U_2)+\dim(U_3)-\dim(U_1\cap U_2)-\dim(U_1\cap U_3)\\ &-\dim(U_2\cap U_3)+\dim(U_1\cap U_2\cap U_3)
+  \end{align*}
+  but this would be wrong. Find an example of three subspaces $U_1, U_2, U_3$ that do not satisfy the above equality.
+  \end{enumerate}
+\end{enumerate}
+
+
+\bibliography{c:/Dropbox/TeX/mybibliography}{}
+% \bibliography{/media/bazse/storage/Dropbox/TeX/mybibliography}{}
+\bibliographystyle{alpha}
+
+\end{document}

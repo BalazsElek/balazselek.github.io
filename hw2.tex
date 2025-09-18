@@ -1,0 +1,136 @@
+\documentclass[12pt]{article}
+%\input{c:/Dropbox/TeX/mypreamble.tex}
+\input{/media/bazse/storage/Dropbox/TeX/mypreamble.tex}
+
+\usepackage{array} % for \newcolumntype macro
+\newcolumntype{C}{>{{}}c<{{}}} % for columns with binary operators
+\newcommand\vv{\multicolumn{1}{c}{\vdots}}
+
+\begin{document}
+\title{MATH223 Homework 2\\ (due Friday, September 19, 11:59pm)}
+\author{}
+\date{}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{enumerate}
+\item As mentioned in the ``Digression on fields'' section in Axler chapter 1A, a \textbf{field} is a set with at least two elements, $0\neq 1$ with two operations, addition ($+$) and multiplication $(\cdot)$ satisfying the ``Properties of complex arithmetic'' (listed in 1.3).
+  \begin{enumerate}
+  \item (1 mark) Consider the set $\bF_2:=\{0,1\}$ with the following operations:
+    \[
+      \begin{array}[h]{c | c c}
+        + & 0 & 1 \\
+        \hline
+        0 & 0 & 1 \\
+        1 & 1 & 0
+      \end{array}
+      \qquad
+      \begin{array}[h]{c | c c}
+        \cdot & 0 & 1 \\
+        \hline
+        0 & 0 & 0 \\
+        1 & 0 & 1
+      \end{array}
+    \]
+
+    Verify that $\bF_2$ is a field.
+  \item (1 mark) Consider the set $\bF_4:=\{ 0,1,x, y\}$ with the following operations:
+    \[
+      \begin{array}[h]{c | c c c c }
+        + & 0 & 1 & x & y \\
+        \hline
+        0 & 0 & 1 & x & y \\
+        1 & 1 & 0 & y & x \\
+        x & x & y & 0 & 1 \\
+        y & y & x & 1 & 0
+      \end{array}
+      \qquad
+      \begin{array}[h]{c | c c c c }
+        \cdot & 0 & 1 & x & y \\
+        \hline
+        0 & 0 & 0 & 0 & 0 \\
+        1 & 0 & 1 & x & y \\
+        x & 0 & x & y & 1 \\
+        y & 0 & y & 1 & x
+      \end{array}      
+    \]
+    Verify that $\bF_4$ is a field. (\textbf{Note:} Verifying associativity would take a lot of writing, so you can just check one (nontrivial) case by hand and state that the others are similar. You can do the same for commutativity and distributivity)
+  \item (1 mark) We can think of $\bF_2$ as ``integers modulo $2$''. That is, we consider two integers $m$ and $n$ equivalent if they have the same remainder modulo $2$ (i.e. if they are both odd, or are both even). Then the usual addition and multiplication of integers define the operations $+$ and $\cdot$\footnote{this can be made precise using the concept of an equivalence relation and quotient rings}. The field $\bF_4$ has $4$ elements, can you think of $\bF_4$ as ``integers modulo $4$''? Explain your answer.
+  \end{enumerate}
+\item (2 marks, this is Exercise 12 in Axler 1C) Prove that the union of two subpspaces of $V$ is a subspace if and only if one of the subspaces is contained in the other.
+\item (1 mark) Find a vector space $V$ where the union of three subspaces is a subspace, but none of the three subspaces contains the other two. (\textbf{Hint:} This will only work if $\bF=\bF_2$)
+\item (3 marks, this is Exercise 13 in Axler 1C) Prove that if $V$ is a vector space over a field $\bF$ where $1+1\neq 0$, then the union of three subspaces of $V$ is a subspace if and only if one of the subspaces contains the other two.
+\item Just like $\bF_2$, by considering integers modulo $3$, we can define a structure of a field on the set $\{0,1,2\}$. In this question, we will study geometry in the vector space $\bF_3^4$.
+  \begin{enumerate}
+  \item (1 mark) How many points does $\bF_3^4$ have?
+  \item (1 mark) Recall from geometry that a line in $\bR^n$ can be described as the set of points:
+    \[
+      \left\{ \vec v+t\vec w \; | \;  t\in \bR \right\}
+    \]
+    for some fixed vectors $\vec v, \vec w\in \bR^n, \vec w \neq \vec 0$.
+    
+    Analogously, we define a line in $\bF_3^4$ as the set of points
+    \[
+      \left\{ \vec v+t\vec w \; | \;  t\in \bF_3 \right\}
+    \]
+    for some fixed vectors $\vec v, \vec w\in \bF_3^n, \vec w \neq \vec 0$.
+    
+    How many points are there on a line in $\bF_3^4$?
+  \item (2 mark) Prove the following: three distinct points $\vec v_1, \vec v_2,\vec v_3\in \bF_3^4$ are on a line in $\bF_3^4$ if and only if $\vec v_1 + \vec v_2 + \vec v_3=\vec 0$.
+  \item (1 mark) Which lines in $\bF_3^4$ are subspaces?
+  \end{enumerate}
+\item The board game SET is played with the set of cards on \Cref{fig:set}.
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{set_cards.png}
+    \caption{The cards in SET}
+    \label{fig:set}
+  \end{figure}
+  The image on each card has four features:
+  \begin{itemize}
+  \item Color: red, green or purple,
+  \item Number: one, two or three symbols,
+  \item Shape: diamond, oval or squiggle,
+  \item Shading: open, striped or solid.
+  \end{itemize}
+  Three cards are said to constitute a SET if, for each of the features, the cards display the feature as either all the same, or all different. For example, the two sets of $3$ boxed cards on \Cref{fig:sets} consistute SETs.
+  \begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.35\textwidth}
+      \includegraphics[width=\textwidth]{set1.png}
+      \caption{A SET, where three features are the same and one is different}
+      \label{fig:set1}
+    \end{subfigure}
+    \qquad
+    \begin{subfigure}[b]{0.35\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{set2.png}
+      \caption{A SET where all four features are different}
+      \label{fig:set2}
+    \end{subfigure}
+    \caption{SETs}
+    \label{fig:sets}
+  \end{figure}  
+  \begin{enumerate}
+  \item (1 mark) Find a bijection from the cards in SET to $\bF_3^4$ (\textbf{Hint:} of course there are many bijections between sets of the same size, you should think of one that seems ``natural'', so, for example, it should not take too long to describe). 
+  \item (2 marks) Find a condition on triples of (distinct) points in $\bF_3^4$ that is equivalent to (using your bijection) the three corresponding cards constituting a SET. Explain your answer carefully. (\textbf{Hint:} look for a linear equation)
+  \item (1 mark) Reinterpret the condition you found in the previous part in terms of geometry (\textbf{Hint:} use Question 5).
+  \item (2 marks) The \href{https://en.wikipedia.org/wiki/Set_(card_game)}{Wikipedia page} for SET makes the following claim:
+    \begin{center}
+      \textit{Given any two cards from the deck, there is one and only one other card that forms a set with them.}
+    \end{center}
+    Prove this claim.
+  \item (no marks) Next time you see people play this game, you can tell them:
+    \begin{center}
+    \textit{Oh, I see, you are looking for \underline{\phantom{lines}} in a \underline{\phantom{vector space}} over the field \underline{\phantom{$\bF_3^4$}} }.\footnote{Despite the playful appearance of this question, there are some \href{https://terrytao.wordpress.com/2007/02/23/open-question-best-bounds-for-cap-sets/}{pretty serious} open problems closely related to this!}
+    \end{center}
+    
+  \end{enumerate}
+\end{enumerate}
+
+
+\bibliography{c:/Dropbox/TeX/mybibliography}{}
+% \bibliography{/media/bazse/storage/Dropbox/TeX/mybibliography}{}
+\bibliographystyle{alpha}
+
+\end{document}

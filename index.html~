@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>
+Bal&aacute;zs Elek
+</title>
+<style> p.ex{width:800px} </style>
+</head>
+<body>
+  <p>
+    <img height="300" src="permutahedron_cropped.png" alt="me" width="300" />
+    <a href="https://arxiv.org/abs/1610.04667"><img style="margin-left:2.5em" height="300" <a href="https://arxiv.org/abs/1911.07760"  src="sadfacepizzaalltoppings(1).png" alt="a pizza" width="300"/></a>
+						    <a href="https://arxiv.org/abs/2202.02490"><img style="margin-left:2.5em" height="300" src="heapcrystal.png" alt="a crystal of heaps"></a>
+						    <a href="https://arxiv.org/abs/1911.07760"><img style="margin-left:2.5em" height="300" src="minors.png" alt="some minors"></a>
+  </p>
+  <h1>
+Bal&aacute;zs Elek
+</h1>
+<p class="ex">
+Email: <a href="mailto:bazse89@gmail.com">bazse89@gmail.com</a>
+</p>
+<h2>
+<a href="cv.pdf">My CV</a>
+</h2>
+<h2>
+<a href="research_statement.pdf">My research statement</a>
+</h2>
+<h2>
+<a href="notes.html">Notes and slides</a>
+</h2>
+<h2>
+<a href="teaching.html">Teaching</a>
+</h2>
+<h2>
+<a href="math223.html">MATH223 Winter 1 2024</a>
+</h2>
+<h2>
+Papers
+</h2>
+<p class="ex">
+(with Daoji Huang) <a href="https://arxiv.org/abs/1911.07760">
+A Grobner basis for Kazhdan-Lusztig ideals of the flag variety of affine type A</a>
+<p class="ex">
+(with Anne Dranowski, Joel Kamnitzer and Calder Morton-Ferguson) <a href="https://arxiv.org/abs/2202.02490">
+Heaps, crystals, and preprojective algebra modules</a>
+<p class="ex">
+(with Tair Akhmejanov) <a href="http://arxiv.org/abs/2010.13930">
+Promotion and Cyclic Sieving on Rectangular &delta;-Semistandard Tableaux</a>
+<p class="ex"> 
+(with Dan Barbasch, Sergio Da Silva and Gautam Gopal Krishnan) <a href="https://arxiv.org/abs/1708.06341">Finite type multiple flag varieties of exceptional groups</a>
+</p>
+<p class="ex">
+<a href="https://arxiv.org/abs/1610.04667">Toric surfaces with equivariant Kazhdan-Lusztig atlases</a>
+</p>
+<p class="ex">
+(with Jiang-Hua Lu) <a href="http://arxiv.org/abs/1601.00047">
+Bott-Samelson varieties and Poisson Ore extensions</a>
+</p>
+</body>
+</html>

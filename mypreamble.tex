@@ -1,0 +1,123 @@
+\usepackage{amsmath,amsthm,amssymb,color,enumerate}
+\usepackage{graphicx}
+\usepackage[backref=page]{hyperref}
+\usepackage{cleveref}
+\usepackage[all]{xy}
+%\usepackage{ytableau}
+%\usepackage{palatino}
+\usepackage{mathpazo}
+\usepackage{euler}
+\usepackage{subcaption}
+
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=red}
+\voffset=-10mm %to print: dvips *.dvi; ps2pdf *.ps
+\oddsidemargin=-20pt
+\headheight=-20pt     \topmargin=0pt
+%\textheight=658pt   \textwidth=495pt %return to this if possible
+%\textheight=658pt   \textwidth=499.5pt
+%textheight=659pt   \textwidth=499.5pt
+\textheight=700pt   \textwidth=499.5pt
+%parskip=.3pt plus 1pt
+\parskip=.2pt plus .5pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\fg}{\mathfrak{g}}
+\newcommand{\fh}{\mathfrak{h}}
+\newcommand{\fb}{\mathfrak{b}}
+\newcommand{\fn}{\mathfrak{n}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bz}{\mathbf{z}}
+\newcommand{\bn}{\mathbf{n}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\bA}{\mathbb{A}}
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\bD}{\mathbb{D}}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\bF}{\mathbb{F}}
+\newcommand{\bN}{\mathbb{N}}
+\newcommand{\bS}{\mathbb{S}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\fF}{\mathfrak{F}}
+\newcommand{\bP}{\mathbb{P}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\bZ}{\mathbb{Z}}
+\newcommand{\fZ}{\mathfrak{Z}}
+\renewcommand{\sl}{\mathfrak{sl}}
+\newcommand{\gl}{\mathfrak{gl}}
+\newcommand{\Mat}{\mathrm{Mat}}
+\newcommand{\sslash}{\mathbin{/\mkern-6mu/}}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Loc}{Loc}
+\DeclareMathOperator{\Gr}{Gr}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\wt}{wt}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Rep}{Rep}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\Lie}{Lie}
+\DeclareMathOperator{\Vect}{Vect}
+\DeclareMathOperator{\Span}{Span}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\big|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+  }}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem*{proposition*}{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem*{conjecture*}{Conjecture}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{corollary*}{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem*{definition*}{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem*{example*}{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem*{exercise*}{Exercise}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{remark*}{Remark}
+\newtheorem{question}[theorem]{Question}
+\newtheorem*{question*}{Question}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem*{claim*}{Claim}

@@ -1,0 +1,90 @@
+\documentclass[12pt]{article}
+\input{c:/Dropbox/TeX/mypreamble.tex}
+% \input{/media/bazse/storage/Dropbox/TeX/mypreamble.tex}
+\usepackage{tikz}
+\tikzset{>=latex}
+\usetikzlibrary{calc}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{patterns,decorations.pathreplacing}
+\usetikzlibrary{spy}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.12}
+\usepgfplotslibrary{colormaps}
+\usepgfplotslibrary{patchplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage{array} % for \newcolumntype macro
+\newcolumntype{C}{>{{}}c<{{}}} % for columns with binary operators
+\newcommand\vv{\multicolumn{1}{c}{\vdots}}
+
+\newcommand{\rubric}[1]{{\color{blue}{#1}}}
+
+\begin{document}
+\title{MATH223 Homework 8\\ (due Friday, Dec/6, 11:59pm)}
+\author{}
+\date{}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{enumerate}
+\item (2 marks) Let $A\in\bR^{m,n}$ be an $m\times n$ matrix with entries in $\bR$. We define the following:
+  \begin{itemize}
+  \item The \textbf{column space} $\operatorname{Col}(A)$ of $A$ is the span of the columns of $A$ (it is a subspace of $\bR^{m,1}$).
+  \item The \textbf{row space} $\operatorname{Row}(A)$ of $A$ is the span of the rows of $A$ (it is a subspace of $\bR^{1,n}$).
+  \item The \textbf{null space} $\operatorname{null}(A)$ of $A$ is $\{ X\in \bR^{n,1} \; |\; AX=0_{\bR^{m,1}} \}$.
+  \end{itemize}
+  Show that
+  \[
+    \left(\operatorname{Row}(A)^\perp\right)^t=\operatorname{null}(A)
+  \]
+  and
+  \[
+    \operatorname{Col}(A)^\perp=\operatorname{null}(A^t)
+  \]
+  where ${}^\perp$ is considered with respect to the dot product and $M^t$ denotes the transpose of the matrix $M$.
+\item (3 marks) This exercise describes a practical way to compute the matrix of a projection onto a subspace. Let $V=\bR^{n,1}$ be the vector space of column vectors with $n$ components equipped with the standard dot product, and let $U\subseteq V$ be a subspace. Choose a basis $\vec u_1,\vec u_2,\ldots ,\vec u_m$ of $U$ and let
+  \[
+    A=( u_1 u_2 \ldots u_m)
+  \]
+  be the $n\times m$ matrix whose columns are the $u_j$-s. Let $\vec y\in V$. Prove that $\exists \vec x\in \bR^{m,1}$ such that
+  \[
+    A^tA\vec x =A^t\vec y
+  \]
+  and moreover, for any such $\vec x$, we have
+  \[
+    A\vec x=P_U\vec y,
+  \]
+  where $P_U$ is the orthogonal projection onto $U$.
+\item (2 marks) Let $V=C[-1,1]$ be the vector space of continuous real-valued functions defined on the interval $[-1,1]$ with inner product $\langle f,g\rangle = \int_{-1}^1 f(t)g(t) \; dt$. Let $W_e$ and $W_o$ denote the subspaces of even and odd functions respectively. Prove that
+  \[
+    W_e=W_o^\perp.
+  \]
+  (\textbf{Hint:} We have proved in class that if $V$ is finite-dimensional inner product space, and $U$ is a subspace then $V=U\oplus U^\perp$. Since $V=C[-1,1]$ is infinite-dimensional, we could not use this theorem. However, it is true that $C[-1,1]=W_e\oplus W_e^\perp$ and $C[-1,1]=W_o\oplus W_o^\perp$. This should help you in answering this question. Before you jump to conclusions, note that if $V=U\oplus W$ and $V=U\oplus\widetilde{W}$, we can not in general conclude that $W=\widetilde{W}$.)
+\item (2 marks, this is Exercise 6 in Axler 6C) Suppose $V$ is finite-dimensional and $T\in \mathcal{L}(V,W)$.
+  \[
+    T=TP_{(\operatorname{null}T)^\perp}=P_{\operatorname{range} T}T.
+  \]
+\item (2 marks) Let $M\in \bC^{n,n}$ be an $n\times n$ matrix with complex entries. Let $M^*$ denote the \textbf{conjugate transpose} of $M$, that is $M^*$ is an $n\times n$ complex matrix whose entries are
+  \[
+    M^*_{(i,j)}=\overline{M_{(j,i)}}.
+  \]
+  Prove that
+  \[
+    MM^*=I_{\bC^n}
+  \]
+  if and only if the rows of $M$ form an orthonormal basis for $\bC^n$.
+\item (2 marks, this is Exercise 17 in Axler 8A) Suppose $T\in \mathcal{L}(V)$ is nilpotent and $m$ is a positive integer such that $T^m=0$.
+  \begin{enumerate}[(a)]
+  \item Prove that $I-T$ is invertible and that $(I-T)^{-1}=I+T+\ldots +T^{m-1}$.
+  \item Explain how you would guess the formula above.
+  \end{enumerate}
+\item (2 marks, this is Exercise 3 in Axler 8B) Suppose $T\in \mathcal{L}(V)$. Suppose $S\in \mathcal{L}(V)$ is invertible. Prove that $T$ and $S^{-1}TS$ have the same eigenvalues with the same multiplicities.
+\item (2 marks, this is Exercise 9 in Axler 8B) Suppose $\bF=\bC$ and $T\in \mathcal{L}(V)$. Prove that there exist $D,N\in \mathcal{L}(V)$ such that $T=D+N$, the operator $D$ is diagonalizable, $N$ is nilpotent, and $DN=ND$.
+\item (3 marks, this is Exercise 14 in Axler 8C) Suppose $\bF=\bC$ and $T\in \mathcal{L}(V)$. Prove that there does not exist a direct sum decomposition of $V$ into two nonzero subspaces invariant under $T$ if and only if the minimal polynomial of $T$ is of the form $(z-\lambda)^{\dim V}$ for some $\lambda\in \bC$.
+\end{enumerate}
+
+
+\bibliography{c:/Dropbox/TeX/mybibliography}{}
+% \bibliography{/media/bazse/storage/Dropbox/TeX/mybibliography}{}
+\bibliographystyle{alpha}
+
+\end{document}

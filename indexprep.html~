@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>
+Balazs Elek
+</title>
+<style> p.ex{width:800px} </style>
+</head>
+<body>
+<p>
+  <img height="300" src="permutahedron_cropped.png" alt="me" width="300" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://arxiv.org/abs/1610.04667"><img height="300" src="sadfacepizzaalltoppings(1).png" alt="a pizza" width="300"/> </a></p>
+<h1>
+Balazs Elek
+</h1>
+<p class="ex">
+PhD student in mathematics
+</p>
+<p class="ex">
+120 Malott Hall <br>
+Cornell University <br>
+Ithaca, NY 14853 <br>
+Email: <a href="mailto:bazse@math.cornell.edu">bazse@math.cornell.edu</a>
+</p>
+<p class="ex">
+I am working with <a href="http://www.math.cornell.edu/m/People/Faculty/knutson">Allen Knutson</a>.
+</p>
+<h2>
+
+Notes
+</h2>
+<p class="ex">
+Notes for the Ithaca High School Senior Seminar 2016 Fall: <a href="reflection_groups_2016.pdf">Reflection Groups</a>
+<p class="ex">
+My poster for <a href="https://sites.google.com/site/algecomday/algecom-13-1">ALGECOM13</a> and the <a href="http://www.fields.utoronto.ca/activities/workshops/introductory-workshop-combinatorial-algebraic-geometry">Introductory Workshop on Combinatorial Algebraic Geometryat Fields</a>: <a href="pizzaspostermod.pdf">Pizzas and Kazhdan-Lusztig atlases in dimension 2</a>
+<p class="ex">
+Slides for my 2016 Spring Olivetti talk: <a href="pizzaslides_olivetti.pdf">Pizzas</a>
+<p class="ex">
+Notes for my 2015 Fall Olivetti talk: <a href="olivettispringerresolution.pdf">The Springer Resolution</a>
+</p>
+<p class="ex">
+Notes for my 2014 Fall Olivetti talk: <a href="olivetti2014fall_Schubert_calculus.pdf">Schubert Calculus</a>
+</p>
+<p class="ex">
+Notes for the 2014/Sep/23 lecture in MATH7390: <a href="BS_varieties.pdf">Bott-Samelson varieties</a>
+</p>
+<p class="ex">
+Notes for the Ithaca High School Senior Seminar 2014 Spring: <a href="reflection_groups.pdf">Reflection Groups</a>
+</p>
+<p class="ex">
+Here is my <a href="thesis.pdf">Master's thesis</a>, written at <a href="http://www.math.hku.hk/">The University of Hong Kong</a>, where my advisor was <a href="http://hkumath.hku.hk/~jhlu/">Prof. Jiang-Hua Lu</a>. If you are curious what this Poisson structure looks like for a word of the top element of the Weyl group of E8 (and who wouldn't be?), <a href="E8example.pdf">here</a> are a couple of Poisson brackets.
+</p>
+<h2>
+Papers
+</h2>
+<p class="ex">
+<a href="https://arxiv.org/abs/1610.04667">Toric surfaces with equivariant Kazhdan-Lusztig atlases</a>
+</p>
+<p class="ex">
+(with Jiang-Hua Lu) <a href="http://arxiv.org/abs/1601.00047">On a Poisson structure on Bott-Samelson varieties: computations in coordinates</a>
+</p>
+</body>
+</html>

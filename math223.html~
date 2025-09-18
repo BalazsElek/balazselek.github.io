@@ -1,0 +1,223 @@
+<html>
+<head>
+<title>
+MATH223 Honours Linear Algebra
+</title>
+<style> p.ex{width:800px} </style>
+</head>
+<body>
+<center>
+<h1>
+MATH223 Honours Linear Algebra
+</h1>
+<h2>
+2024 Winter 1
+</h2>
+<a href="https://en.wikipedia.org/wiki/Shear_mapping"><img height="200" src="sheared_sheep.png" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://en.wikipedia.org/wiki/Jordan_normal_form"><img height="200" src="jordan_form.svg" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://mathoverflow.net/a/23501/88858"><img height="200" src="threelines.png" /></a>
+</center>
+<p><b>Instructor:</b> (no math by email, please include MATH223 in the subject field)
+  <table border=1>
+    <tr>
+      <td align=center> Instructor </td>
+      <td align=center> Office hours times</td>
+      <td align=center> Office hours location</td>
+      <td align=center> Email address</td>
+      <td align=center> Lectures </td>
+    </tr>
+    <tr>
+      <td align=center><a href="https://personal.math.ubc.ca/~balazse/">Balázs Elek</a></td>
+      <td align=center>Mon 1-2,<br>Thu 11-12<br>Fri 1-2<br></td>
+      <td align=center>  LSK300</td>
+      <td align=center><a href="mailto:balazse@math.ubc.ca">balazse@math.ubc.ca</a></td>
+      <td align=center>MWF 10-11, FSC-Floor 1-Room 1221</td>
+    </tr>
+  </table>
+</p>
+
+
+<p>
+  <b>Text:</b> Our textbook is <a href="https://linear.axler.net/">Linear Algebra Done Right</a> by Sheldon Axler. We will occasionally refer to <a href="https://personal.math.ubc.ca/~tbjw/ila/">Interactive Linear  Algebra</a>, UBC edition.
+</p>
+<p>
+<b>Other resources:</b> The <a href="syllabus.pdf">syllabus</a>, the Canvas site and the <a href="https://piazza.com/class/m0e55kt33j56nj">Piazza forum</a>. You may also find <a href="https://sagecell.sagemath.org">Sage</a> helpful for computations. <a href="https://www.overleaf.com/read/jrwqxtwddvzg#db1781">Here</a> is an overleaf template that can help you get started with the homework. Optional: <a href="mypreamble.tex">here</a> is the preamble you need to compile the .tex files for the Homeworks.
+</p>
+
+<p><center><b><font size=+1>Course Calendar</font></b></center>
+
+<p><center>The sections refer to the chapter in Axler, unless stated otherwise. The calendar is subject to change.</center></p>
+  
+<p><table width=100% border=1>
+    <thead>
+      <tr>
+	<td align=center>#</td>
+	<td align=center>Week of</td>
+	<td align=center> Monday </td>
+	<td align=center> Wednesday </td>
+	<td align=center> Friday</td>
+	<td align=center> Homework</td>
+	<td align=center>Announcements</td>
+      </tr>
+      <tbody>
+
+	<tr>
+	  <td align=center> 1 </td>
+	  <td align=center>Sep 2</td>
+	  <td align=center style="color:red"> No class </td>
+	  <td align=center>Introduction</td>
+	  <td align=center> ILA Chapter 2</td>
+	  <td align=center><a href="hw1.pdf">HW1</a></td>
+	  <td></td>
+	</tr>
+
+
+	<tr>
+	  <td align=center> 2 </td>
+	  <td align=center> Sep 9  </td>
+	  <td align=center> 1A </td>
+	  <td align=center> 1B </td>
+	  <td align=center> 1C </td>
+	  <td align=center><a href="hw2.pdf">HW2</a> and <a href="hw2.tex">.tex file</a> and <a href="pics.zip">images</a></td>
+	  <td>HW1 due <strong>Sunday</strong> 11:59 pm</td>
+	</tr>
+
+
+	<tr>
+	  <td align=center> 3 </td>
+	  <td align=center> Sep 16 </td>
+	  <td align=center> 2A </td>
+	  <td align=center> 2B </td>
+	  <td align=center> </td>
+	  <td align=center> <a href="hw3.pdf">HW3</a> and <a href="hw3.tex">.tex file</a> </td>
+	  <td>HW2 due <strong>Sunday</strong> 11:59pm</td>
+	</tr>
+	
+
+	
+	<tr>
+	  <td align=center> 4 </td>
+	  <td align=center> Sep 23 </td>
+	  <td align=center> 2C </td>
+	  <td align=center> 3A </td>
+	  <td align=center> 3B </td>
+	  <td align=center>   </td>
+	  <td><a href="midterm_1_info.pdf">Midterm 1 info</a> and <a href="test_1_practice.pdf">Practice midterm 1</a></td>
+	</tr>
+	
+	<tr>
+	  <td align=center> 5 </td>
+	  <td align=center> Sep 30 </td>
+	  <td align=center style="color:red">No class  </td>
+	  <td align=center>  </td>
+	  <td align=center style="color:blue"> Midterm 1  </td>
+	  <td align=center>  </td>
+	  <td>HW3 due <strong>Monday</strong> 11:59pm, Office hours changed this week to Wed 2-3, Thu 11-12 and 1-2 <a href="test_1_practice_solutions.pdf">Practice midterm 1 solutions</a></td>
+	</tr>
+
+	<tr>
+	  <td align=center> 6 </td>
+	  <td align=center> Oct 7 </td>
+	  <td align=center> 3C </td>
+	  <td align=center> 3C </td>
+	  <td align=center> 3D </td>
+	  <td align=center>  <a href="hw4.pdf">HW4</a> and <a href="hw4.tex">.tex file</a> </td>
+	  <td></td>
+	</tr>
+
+	<tr>
+	  <td align=center> 7 </td>
+	  <td align=center> Oct 14 </td>
+	  <td align=center style="color:red"> No Class </td>
+	  <td align=center> 3D </td>
+	  <td align=center> 3D </td>
+	  <td align=center>  <a href="hw5.pdf">HW5</a> and <a href="hw5.tex">.tex file</a> </td>
+	  <td>HW4 due <strong>Sunday</strong> 11:59pm, Office hours on Friday are moved to 11-12</td>
+	</tr>
+
+
+	<tr>
+	  <td align=center> 8 </td>
+	  <td align=center> Oct 21 </td>
+	  <td align=center> 3D </td>
+	  <td align=center> <a href="determinants.pdf">Determinants</a> (ILA 5.1) </td>
+	  <td align=center> 3E (just products, not quotients), 4 </td>
+	  <td align=center>  <a href="hw6.pdf">HW6</a> and <a href="hw6.tex">.tex file</a> </td>
+	  <td>HW5 due <strong>Sunday</strong> 11:59pm </td>
+	</tr>
+
+
+	<tr>
+	  <td align=center> 9 </td>
+	  <td align=center> Oct 28 </td>
+	  <td align=center> 5A </td>
+	  <td align=center> 5B </td>
+	  <td align=center> 5B </td>
+	  <td align=center>  </td>
+	  <td>HW6 due <strong>Sunday</strong> 11:59pm, <a href="midterm_2_info.pdf">Midterm 2 info</a> and <a href="test_2_practice.pdf">Practice midterm 2</a> <a href="test_1_solutions.pdf"> Sample solutions for Midterm 1 </a> </td>
+	</tr>
+
+	<tr>
+	  <td align=center> 10 </td>
+	  <td align=center> Nov 4 </td>
+	  <td align=center>  </td>
+	  <td align=center>  </td>
+	  <td align=center style="color:blue"> Midterm 2 </td>
+	  <td align=center>  </td>
+	  <td><a href="test_2_practice_solutions.pdf">Practice midterm 2 solutions</a>, Friday Office hours are moved to Thursday 2-3pm in MATH202</td>
+	</tr>
+
+		<tr>
+	  <td align=center> 11 </td>
+	  <td align=center> Nov 11 </td>
+	  <td align=center style="color:red"> No Class </td>
+	  <td align=center style="color:red"> No Class </td>
+	  <td align=center> 5D </td>
+	  <td align=center>  </td>
+	  <td></td>
+	</tr>
+
+	<tr>
+	  <td align=center> 12 </td>
+	  <td align=center> Nov 18 </td>
+	  <td align=center> 3F/6A </td>
+	  <td align=center> 6B </td>
+	  <td align=center>  </td>
+	  <td align=center> <a href="hw7.pdf">HW7</a> and <a href="hw7.tex">.tex file</a> </td>
+	  <td><a href="test_2.pdf"> Sample solutions for Midterm 2 </a></td>
+	</tr>
+
+	<tr>
+	  <td align=center> 13 </td>
+	  <td align=center> Nov 25 </td>
+	  <td align=center> 6C </td>
+	  <td align=center> 8A/8B </td>
+	  <td align=center> 8C </td>
+	  <td align=center> <a href="hw8.pdf">HW8</a> and <a href="hw8.tex">.tex file</a> </td>
+	  <td>HW7 due <strong>Friday</strong> 11:59pm </td>
+	</tr>
+
+	<tr>
+	  <td align=center> 14 </td>
+	  <td align=center> Dec 2 </td>
+	  <td align=center> 8D </td>
+	  <td align=center> 9A </td>
+	  <td align=center> 9B </td>
+	  <td align=center>  </td>
+	  <td>HW8 due <strong>Sunday</strong> 11:59pm </td>
+	</tr>
+	
+	<tr>
+	  <td align=center>  </td>
+	  <td align=center>  </td>
+	  <td align=center>  </td>
+	  <td align=center>  </td>
+	  <td align=center>  </td>
+	  <td align=center> <a href="final_info.pdf">Final exam info</a> and <a href="final_practice.pdf">Practice Final</a> </td>
+	  <td>Office hours after classes end: Dec/12 1-3pm, Dec/13 1-2pm, Dec/16 1-3pm, Dec/17 1-3pm in LSK300 </td>
+	</tr>
+
+  </table>
+
+
+</body>
+</html>

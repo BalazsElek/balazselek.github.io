@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>SageMath applets for integration</title>
+    <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+    <script>
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+                           template:       sagecell.templates.minimal,
+                           evalButtonText: 'Activate'});
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute',
+                           evalButtonText: 'Evaluate'});
+    </script>
+  </head>
+  <body>
+    <h1>Contents</h1>
+    <a href="#definite_integrals">Definite integrals</a><br>
+    <a href="#indefinite_integrals">Indefinite integrals</a><br>
+    <a href="#partial_fractions">Partial fractions</a><br>
+    <a href="#left_riemann_sum">Left-hand Riemann sum</a><br>
+    <a href="#right_riemann_sum">Right-hand Riemann sum</a><br>
+    <a href="#midpoint_rule">Midpoint rule</a><br>
+    <a href="#simpsons_rule">Simpson's Rule</a><br>
+    <a href="#slope_fields">Slope fields</a><br>
+    <a href="#desolver">Differential equation solver</a><br>
+    <h1>How to input functions in sage</h1>
+    <p>The SageMath applets below understand basic functions, so you can type in <code>f(x)=ln(x)</code> (sage also treats <code>log(x)</code> as the natural logarithm $\ln(x)$), trigonometric functions like <code>sin(x), cos(x)</code>, exponential functions like <code>e^x, 5^(-x)</code> and polynomials. When you are multiplying two functions together, you have to put a * between the factors. This includes the coefficients of polynomials, for example, writing <code>f(x)=4x^2</code> produces an error, writing <code>f(x)=4*x^2</code> is the correct way to specify the function $f(x)=4x^2$. Similarly to input the function $f(x)=e^x\sin(x)$, we have to write <code>f(x)=(e^x)*(sin(x))</code>.</p>
+    <h1>Integration tools</h1>
+    <h2><a id="partial_fractions">Partial fractions decompositions</a></h2>
+    <p>
+      Computes the partial fractions decomposition for $f(x)$.
+    </p>
+    <div class="compute" id="sagecell1"><script type="text/code">
+#Example
+f(x)=2/(x^2 + 4*x + 3)
+show(f(x),"=",f(x).partial_fraction())
+    </script></div>
+    <h2><a id="indefinite_integrals">Indefinite integrals</a></h2>
+    <p>
+      Computes the indefinite integral $$\int f(x)\, dx$$.
+    </p>
+    <div class="compute" id="sagecell1"><script type="text/code">
+from sage.symbolic.integration.integral import indefinite_integral
+#Example
+f(x)=log(x)
+show(indefinite_integral(f(x),x))
+    </script></div>
+        <h2><a id="definite_integrals">Definite integrals</a></h2>
+    <p>
+      Computes the indefinite integral $$\int_a^b f(x)\, dx$$. If you want the answer as a decimal, you should change the last line of the code to <code>show(definite_integral(f(x),x,a,b).n())</code>.
+    </p>
+    <div class="compute" id="sagecell1"><script type="text/code">
+from sage.symbolic.integration.integral import definite_integral
+#Example
+f(x)=1/x
+a=1
+b=3
+show(definite_integral(f(x),x,a,b))
+    </script></div>
+        <h1>Numerical integration applets</h1>
+
+    <h2><a id="left_riemann_sum">Left-hand Riemann sum</a></h2>
+    <p>
+      The function <code>lefthand_rs</code> outputs the
+      left-hand Riemann sum approximation of \(\int_a^b f(x) dx\)
+      using n subintervals:
+      $$\int_a^bf(x)dx \approx L_n= \sum_{i=1}^n f(x_{i-1})\Delta x = \Delta x(f(x_0)+f(x_1)+\cdots +f(x_{n-1})).$$
+    </p>
+    <div class="compute" id="sagecell1"><script type="text/code">def lefthand_rs(fcn,a,b,n):
+	Deltax = (b-a)/n
+	return Deltax*sum([fcn(a+Deltax*i) for i in [0..(n-1)]])
+
+#Example
+n=3
+a=0
+b=3
+f(x)=x^2
+show(lefthand_rs(f,a,b,n).n());
+    </script></div>
+    <h2><a id="right_riemann_sum">Right-hand Riemann sum</a></h2>
+    <p>
+      The function <code>righthand_rs</code> outputs the
+      right-hand Riemann sum approximation of \(\int_a^b f(x) dx\)
+      using n subintervals:
+      $$\int_a^bf(x)dx \approx R_n= \sum_{i=1}^n f(x_{i})\Delta x = \Delta x(f(x_1)+f(x_2)+\cdots +f(x_{n})).$$
+    </p>
+    <div class="compute" id="sagecell1"><script type="text/code">def righthand_rs(fcn,a,b,n):
+	Deltax = (b-a)/n
+	return Deltax*sum([fcn(a+Deltax*i) for i in [1..n]])
+
+#Example
+n=3
+a=0
+b=3
+f(x)=x^2
+show(righthand_rs(f,a,b,n).n());
+    </script></div>
+    <h2><a id="midpoint_rule">Midpoint rule</a></h2>
+    <p>
+      The function <code>midpoint_rule</code> outputs the
+      midpoint rule approximation of \(\int_a^b f(x) dx\)
+      using n subintervals:
+      $$\int_a^bf(x)dx \approx M_n= \sum_{i=1}^n f\left(\frac{x_{i-1}+x_i}{2}\right)\Delta x $$
+    </p>
+    <div class="compute" id="sagecell1"><script type="text/code">def midpoint_rule(fcn,a,b,n):
+	Deltax = (b-a)/n
+	return Deltax*sum([fcn(a+Deltax/2+Deltax*i) for i in [0..(n-1)]])
+
+#Example
+n=3
+a=0
+b=3
+f(x)=x^2
+show(midpoint_rule(f,a,b,n).n());
+    </script></div>
+        <h2><a id="trapezoid_rule">Trapezoid rule</a></h2>
+    <p>
+      The function <code>trapezoid_rule</code> outputs the
+      trapezoid rule approximation of \(\int_a^b f(x) dx\)
+      using n subintervals:
+      $$\int_a^bf(x)dx \approx T_n= \sum_{i=0}^{n-1} \frac{1}{2}\left(f(x_i)+f(x_{i+1})\right)\Delta x $$
+    </p>
+    <div class="compute" id="sagecell1"><script type="text/code">def trapezoid_rule(fcn,a,b,n):
+	Deltax = (b-a)/n
+	return (1/2)*Deltax*sum([fcn(a+Deltax*(i))+fcn(a+Deltax*(i+1)) for i in [0..(n-1)]])
+
+#Example
+n=3
+a=0
+b=3
+f(x)=x^2
+show(trapezoid_rule(f,a,b,n).n());
+    </script></div>
+            <h2><a id="simpsons_rule">Simpson's rule</a></h2>
+    <p>
+      The function <code>simpsons_rule</code> outputs the
+      Simpson's rule approximation of \(\int_a^b f(x) dx\)
+      using n subintervals:
+      $$\int_a^bf(x)dx \approx S_{2n}=\frac{2M_n+T_n}{3}$$
+    </p>
+    <div class="compute" id="sagecell1"><script type="text/code">def simpsons_rule(fcn,a,b,n):
+	Deltax = (b-a)/n
+	return (2*(Deltax*sum([fcn(a+Deltax/2+Deltax*i) for i in [0..(n-1)]]))+((1/2)*Deltax*sum([fcn(a+Deltax*(i))+fcn(a+Deltax*(i+1)) for i in [0..(n-1)]])))/3
+
+#Example
+n=3
+a=0
+b=3
+f(x)=x^2
+show(simpsons_rule(f,a,b,n).n());
+    </script></div>
+    <h1>Differential Equation applets</h1>
+    <h2><a id="slope_fields">Slope fields</a></h2>
+    <p>
+      This applet plots the slope field for a given function $f(x,y)$ of the variables $x$ and $y$. To change the $x$ and $y$ ranges, modify the second and third argument of the function <code>plot_slope_field</code> accordingly.
+    </p>
+    <div class="compute" id="sagecell1"><script type="text/code">
+x,y=var('x y')
+f(x,y)=-(1/2)*(y-4)
+plot_slope_field(f(x,y),(x,-10,10),(y,-10,10))
+    </script></div>
+    <h2><a id="desolver">Differential equation solver</a></h2>
+    <p>
+      This applet solves differential equations. To use, arrange your equation such that it is of the form $0=\frac{dy}{dx}f(x,y)+g(x,y)$, and input the right-hand side for the variable <code>de</code> below, using <code>diff(y,x)</code> for $\frac{dy}{dx}$.
+    </p>
+    <div class="compute" id="sagecell1">
+      <script type="text/code">
+y=function('y')(x)
+de=diff(y,x)+y-2
+h=desolve(de,y)
+show(h)	
+      </script>
+    </div>
+  </body>
+</html>

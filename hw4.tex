@@ -1,0 +1,138 @@
+\documentclass[12pt]{article}
+\input{c:/Dropbox/TeX/mypreamble.tex}
+%\input{/media/bazse/storage/Dropbox/TeX/mypreamble.tex}
+\usepackage{tikz}
+\tikzset{>=latex}
+\usetikzlibrary{calc}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{patterns,decorations.pathreplacing}
+\usetikzlibrary{spy}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.12}
+\usepgfplotslibrary{colormaps}
+\usepgfplotslibrary{patchplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage{array} % for \newcolumntype macro
+\newcolumntype{C}{>{{}}c<{{}}} % for columns with binary operators
+\newcommand\vv{\multicolumn{1}{c}{\vdots}}
+
+\newcommand{\rubric}[1]{{\color{blue}{#1}}}
+
+\begin{document}
+\title{MATH223 Homework 4\\ (due Friday, Oct/18, 11:59pm)}
+\author{}
+\date{}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{enumerate}
+\item (3 marks) If $S\subset V$ is an arbitrary subset (not necessarily a subspace), and $T:V\to V$ is a transformation (any function, not necessarily linear), we define the image of $S$ under $T$ to be
+  \[
+    T(S)=\left\{ T(\vec v) \; | \; \vec v \in S\right\}.
+  \]
+  Consider the following figure:
+        \newcommand{\transformedpic}[2]{
+    \begin{tikzpicture}[scale=.8]
+      \draw[gray!50!white, very thin] (-2.1,-2.1) grid (2.1,2.1);
+      \draw[->] (-2.1,0) -- (2.3,0);
+      \draw[->] (0,-2.1) -- (0,2.3);
+      \node at (-1.6,1.5) {#2};
+      \node at (1.7,-0.3) {$x$} ;
+      \node at (-0.3,1.7) {$y$} ;
+      \draw[cm={#1},blue, very thick] (0,0) -- (0,1) -- (1,1) -- (1,0) -- (0,0)  (0,1) -- (1,0);
+    \end{tikzpicture}
+  }
+  \begin{center}
+    \transformedpic{1,0,0,1,(0,0)}{$\mathbf{S}$}
+    \transformedpic{0,1,-1,0,(1,0)}{$A$}
+    \transformedpic{1,1,0,1,(0,0)}{$B$}
+    \transformedpic{2,0,0,2,(-1,-1)}{$C$}
+    \transformedpic{2,0,0,1,(0,0)}{$D$}
+    \transformedpic{1,1,1,1,(0,0)}{$E$}
+    \transformedpic{1,1,-1,1,(0,0)}{$F$}
+    \begin{tikzpicture}[scale=.8]
+      \draw[gray!50!white, very thin] (-2.1,-2.1) grid (2.1,2.1);
+      \draw[->] (-2.1,0) -- (2.3,0);
+      \draw[->] (0,-2.1) -- (0,2.3);
+      \node at (-1.6,1.5) {$G$};
+      \node at (0,0) [circle, fill , blue, inner sep=1pt]{};
+    \end{tikzpicture}
+  \end{center}
+  On it you see an original subset of $\bR^2$ (in blue, named \textbf{S}) and the images of \textbf{S} under some transformation (a different one for each of A, B, \ldots ,G). For each of the images:
+  \begin{itemize}
+  \item Determine if the corresponding transformation can be linear or not.
+  \item For the transformations that can be linear, find a matrix that could be the matrix of the transformation with respect to the standard basis of $\bR^2$.
+  \item For the transformations that can not be linear, explain why they can not be.
+  \end{itemize}
+\item Let $\frac{d}{dx}$ denote differentiation, $\operatorname{mult}_{x}$ denote multiplication by $x$. We have seen that we can consider these as linear operators on $\mathcal{P}(\mathbb{R})$.\footnote{These two operators are the generators for the \href{https://en.wikipedia.org/wiki/Weyl_algebra}{Weyl algebra}, introduced by Herman Weyl to study the Heisenberg uncertainty principle in quantum mechanics.} To clarify: a linear operator is a linear map from a vector space to itself.
+  \begin{enumerate}
+  \item (1 mark) If we restrict the domain of the linear map $\operatorname{mult}_{x}$ to the subspace $\mathcal{P}_m(\mathbb{R})$, what is
+    \[
+      \operatorname{range}\left(\operatorname{mult}_{x}\right)?
+    \]
+  \item (1 mark) Consider both $\operatorname{mult}_{x}$ and $\frac{d}{dx}$ as linear maps from $\mathcal{P}_m(\mathbb{R})$ to $\mathcal{P}(\mathbb{R})$. Prove that    
+    \[
+      \operatorname{range}\left(\frac{d}{dx}\operatorname{mult}_{x}\right)\subseteq \mathcal{P}_m(\mathbb{R}),
+    \]
+    so $\frac{d}{dx}\operatorname{mult}_{x}$ can be considered as an operator on $\mathcal{P}_m(\mathbb{R})$.
+  \item(2 marks) \label{part:commutator} Find a simpler expression for the linear operator
+    \[
+      \frac{d}{dx}\operatorname{mult}_{x}-\operatorname{mult}_{x}\frac{d}{dx}.
+    \]
+    (\textbf{Hint:} If you consider this as an operator on $\mathcal{P}_m(\mathbb{R})$ then you may be able to use a Lemma)
+  \item (1 mark) Use your result above to simplify the expression
+    \[
+      \left(\frac{d}{dx}\right)^3\operatorname{mult}_{x} - \operatorname{mult}_{x} \left(\frac{d}{dx}\right)^3-2\left(\frac{d}{dx}\right)^2.
+    \]    
+   \item (1 mark) \label{part:matrix}Find the matrix of $\frac{d}{dx}\operatorname{mult}_{x}$ (as an operator on $\mathcal{P}_m(\mathbb{R})$) with respect to the basis $1,x,x^2,\ldots , x^m$.
+   \item (1 mark) Use parts (\ref{part:commutator}) and (\ref{part:matrix}) to find the matrix of $\operatorname{mult}_{x}\frac{d}{dx}$ (with respect to the basis $1,x,x^2,\ldots , x^m$) without doing any more direct computation or matrix entries.
+  \end{enumerate}
+\item (2 marks, this is Exercise 11 in Axler 3A) Suppose $V$ is finite-dimensional and $T\in \mathcal{L}(V)$. Prove that $T$ is a scalar multiple of the identity if and only if $ST=TS$ for every $S\in \mathcal{L}(V)$.\footnote{This is a special case of \href{https://en.wikipedia.org/wiki/Schur\%27s_lemma}{Schur's Lemma}, an important result in representation theory.}
+\item Recall the notion of direct sums of vector spaces (definition 1.41 in Axler 1C). Let $U,V$ be subspaces of some vector space, and let $W$ be finite-dimensional vector space. 
+  \begin{enumerate}
+  \item (1 mark) Prove that if $\vec u_1\ldots \vec u_m$ is a basis for $U$ and $\vec v_1,\ldots \vec v_n$ is a basis for $V$, then
+    \[
+      \vec u_1,\ldots ,\vec u_m, \vec v_1,\ldots ,\vec v_n
+    \]
+    is a basis for $U\oplus V$.
+  \item (1 mark) Given linear maps $S:U\to W, T:V\to W$, we define the direct sum of the maps $(S\oplus T):(U\oplus V)\to W$ as follows:
+  \[
+    (S\oplus T)(\vec u + \vec v) = S(\vec u) + T(\vec v).
+  \]
+  Explain why the above rule uniquely determines the linear transformation (\textbf{Hint:} your explanation should involve clarifying the roles of $\vec u$ and $\vec v$).
+\item (2 marks) Let $\vec w_1,\ldots, \vec w_d$ be a basis for $W$. Find the matrix of $(S\oplus T)$ with respect to the bases $\vec u_1,\ldots ,\vec u_m,\vec v_1,\ldots ,\vec v_n$ and $\vec w_1,\ldots, \vec w_d$. in terms of the matrices of $S$ and $T$ (with respect to the bases $\vec u_1,\ldots ,\vec u_m$ and $\vec v_1,\ldots ,\vec v_n$).
+\item (1 mark) Given linear maps $Q:W\to U$ and $R:W\to V$, we define the direct sum of the maps $
+  \begin{pmatrix}
+    Q \\
+    \oplus \\
+    R
+  \end{pmatrix}: W\to (U\oplus V)$ as follows:
+  \[
+  \begin{pmatrix}
+    Q \\
+    \oplus \\
+    R
+  \end{pmatrix}(\vec w)=Q(\vec w)+R(\vec w).
+  \]
+  Find the matrix of $
+  \begin{pmatrix}
+    Q \\
+    \oplus \\
+    R
+  \end{pmatrix}$ with respect to the bases $\vec w_1,\ldots ,\vec w_d$ and $\vec u_1,\ldots ,\vec u_m,\vec v_1,\ldots ,\vec v_n$.2
+\item (1 mark) Find the null space of $
+  \begin{pmatrix}
+    Q \\
+    \oplus \\
+    R
+  \end{pmatrix}$ in terms of $\operatorname{null}(Q)$ and $\operatorname{null}(R)$.
+  \end{enumerate}
+\item (2 marks, this is Exercise 5 in Axler 3C) Suppose $V$ and $W$ are finite-dimensional and $T\in \mathcal{L}(V,W)$. Prove that there exist a basis of $V$ and a basis of $W$ such that with respect to these bases, all entries of $\mathcal{M}(T)$ are $0$ except that the entries in row $k$, column $k$ equal $1$ if $1\leq k \leq \dim \operatorname{range} T$.
+\end{enumerate}
+
+
+\bibliography{c:/Dropbox/TeX/mybibliography}{}
+% \bibliography{/media/bazse/storage/Dropbox/TeX/mybibliography}{}
+\bibliographystyle{alpha}
+
+\end{document}
